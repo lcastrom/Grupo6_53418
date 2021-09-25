@@ -1,4 +1,3 @@
-
 /*En caso de cumplir las condiciones retorna verdadero,
 de lo contrario retorna falso.*/
 //FALLA Si INiCiA EN MiNUSCULAS
