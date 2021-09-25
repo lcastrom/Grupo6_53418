@@ -10,7 +10,6 @@ function validar_nombre_usuario (string)
         alert("Valide ahora la edad")        
     }
 }
-
 function validarString(string) {
     //Solo puede contener solo letras de la A a la Z y espacios. 
     //Si al testear (evaluar) mi expresion de regEx sobre mi string 
