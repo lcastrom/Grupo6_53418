@@ -45,4 +45,4 @@ function validarString(string) {
     return true
 }
 
-//module.exports.validar_nombre_usuario = validar_nombre_usuario;
+module.exports.validar_nombre_usuario = validar_nombre_usuario;
