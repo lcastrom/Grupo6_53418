@@ -1,14 +1,7 @@
-/*En caso de cumplir las condiciones retorna verdadero,
-de lo contrario retorna falso.*/
-//FALLA Si INiCiA EN MiNUSCULAS
 function validar_nombre_usuario (string) 
 {
     respuesta = validarString (string);
-    if (respuesta === false) {
-        alert ("Error")    
-    }else{
-        alert("Valide ahora la edad")        
-    }
+    return respuesta;   
 }
 
 function validarString(string) {
