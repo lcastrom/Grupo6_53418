@@ -4,11 +4,8 @@ de lo contrario retorna falso.*/
 function validar_nombre_usuario (string) 
 {
     respuesta = validarString (string);
-    if (respuesta === false) {
-        alert ("Error")    
-    }else{
-        alert("Valide ahora la edad")        
-    }
+    return respuesta;
+    
 }
 function validarString(string) {
     //Solo puede contener solo letras de la A a la Z y espacios. 
