@@ -1,11 +1,30 @@
-/*En caso de cumplir las condiciones retorna verdadero,
-de lo contrario retorna falso.*/
-//FALLA Si INiCiA EN MiNUSCULAS
+//Sprint 3 Parte 1:
+let registros = [];
+
+function agregarRegistro(){
+let nombre = document.getElementById ('dato_nombre_usuario').value
+let edad = document.getElementById ('dato_edad_usuario').value
+let contrasena = document.getElementById ('dato_contrasena').value
+
+let registro = {
+    'nombre': nombre, 
+    'edad': edad, 
+    'contraseña': contrasena, 
+}
+console.log(registro)
+registros.push (registro)
+
+alert ("Guardando...")
+}
+
+//Sprint 2
 function validar_nombre_usuario (string) 
 {
     respuesta = validarString (string);
+    if (respuesta === true ){
+        agregarRegistro(); 
+    }
     return respuesta;
-    
 }
 function validarString(string) {
     //Solo puede contener solo letras de la A a la Z y espacios. 
@@ -41,4 +60,57 @@ function validarString(string) {
     return true
 }
 
+function validar_edad_usuario(edad){
+    let medad_numerico;
+    let mvalido = true;
+    try {
+        medad_numerico = Number(edad);
+        if (medad_numerico < 0){
+            alert("La Edad Debe ser Positivo");
+            mvalido = false;
+        }
+        else{
+            if (!((medad_numerico >= 13) && (medad_numerico < 110))){
+                alert("La Edad Debe ser igual o mayor a 13 y menor que 110");
+                mvalido = false;
+            }                
+        }
+    } catch (error) {
+        alert("La Edad No es un Numero");
+        mvalido = false;
+        
+    }
+    return mvalido;
+}
+
+function validar_contrasena(string){
+    let mvalido = true;
+    let mordinal = 0;
+    let mindice;
+    let ch;
+    let index = 0;
+    if (string.length < 6) {
+        alert("Longitud Contraseña Debe tener 6 o más caracteres");
+        mvalido = false;
+    }
+    else{
+        /* cumple con la condicion de 6 caracteres */
+        /*recorrer los caracteras de la contraseña y verificar que tenga lo caracteres valisos */
+        for (let i = 0; i < string.length-1; i++) {
+            ch=string[i];
+            mindice = ch.charCodeAt(index);
+            if (! (( mindice >= 48 && mindice <=57 ) || ( mindice >= 65 && mindice <= 90 ) || ( mindice >= 97 && mindice <= 122) ) ) {
+                alert("Solo puede contener caracteres alfanuméricos. Es decir, letras de la A a la Z y los números del 0 al 9.");
+                mvalido = false;
+                break;        
+            }
+
+        }        
+    }
+    return mvalido;
+}
+
 //module.exports.validar_nombre_usuario = validar_nombre_usuario;
+//module.exports.validar_edad_usuario = validar_edad_usuario;
+//module.exports.validar_contrasena = validar_contrasena;
+

@@ -7,22 +7,26 @@
     <title>Sprint 1 -Grupo 6 (53418)</title>
     <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
+<!--ID-->
 <body>
+
     <div class="form_container">
+        <img src="landing_logo.png" height="150" width="400" alt=""/>
+        <br/>
         <form id="form_nuevo_usuario" >
             <label for="lnombre">Nombre del Usuario:</label>
-            <input id="dato_nombre_usuario" type="text" name="lnombre"><br><br>
+            <input id="dato_nombre_usuario" type="text" name="lnombre" ><br><br>
 
             <label for="ledad">Edad:</label>
-            <input type="number" id="dato_edad_usuario" name="ledad" step="1" min="0" max="120" value="0"><br><br>
+            <input type="number" id="dato_edad_usuario" name="ledad" step="1" min="0" max="120" value=""><br><br>
 
             <label for="lcontrasena">Contraseña:</label>
             <input type="password" id="dato_contrasena" name="lcontrasena"><br><br><br><br>
 
-            <button class="my_button" id="enviar_registro">Enviar Registro</button>
+            <button onclick="validar_nombre_usuario (document.getElementById('dato_nombre_usuario').value); return false;"  class="my_button" id="enviar_registro">Enviar Registro</button>
+        
         </form>
     </div>
-    
-
 </body>
+<script src="validaciones.js" async=""></script>
 </html>
